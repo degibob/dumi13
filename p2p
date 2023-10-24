@@ -1,0 +1,13 @@
+def calculate_p2p_transfer_rate(available_bandwidth, num_peers):
+    if num_peers <= 0:
+        return "Number of peers must be greater than 0"
+    p2p_transfer_rate = available_bandwidth / num_peers
+    return p2p_transfer_rate
+
+try:
+    available_bandwidth = float(input("Enter the total available bandwidth (in bytes per second): "))
+    num_peers = int(input("Enter the number of peers: "))
+    transfer_rate = calculate_p2p_transfer_rate(available_bandwidth, num_peers)
+    print(f"P2P Transfer Rate: {transfer_rate} bytes per second")
+except ValueError:
+    print("Please enter valid numerical values for bandwidth and number of peers.")
